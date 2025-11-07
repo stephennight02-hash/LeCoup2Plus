@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeCoup2Plus - Assistant Chat Intégré</title>
+    <title>LeCoup2Plus - Informations</title>
     <!-- Chargement de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -42,7 +42,7 @@
             font-size: 21px;
             color: #ffffff;
             /* FOND D'ÉCRAN : Remplacé par une URL de placeholder esthétique */
-            background-image: url(https://placehold.co/1920x1080/1a1a1a/ffffff?text=Scene+de+Theatre+Ombre); 
+            background-image: url(img/photo-1514306191717-452ec28c7814.jpg); 
             background-attachment: fixed; 
             background-position: center;
             background-size: cover;
@@ -175,6 +175,33 @@
             }
         }
 
+
+        /* --- STYLES SPÉCIFIQUES AU CONTENU (Chat/Infos) --- */
+
+        /* Conteneur principal */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            padding-bottom: 4rem;
+        }
+
+        .main-content-flex {
+            display: flex;
+            flex-direction: column; 
+            gap: 2rem;
+            max-width: 900px;
+            width: 100%;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .main-content-flex {
+                flex-direction: row; 
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+
         /* Styles de la carte Infos Pratiques (Côté Gauche) */
         .info-box {
             background: rgba(255, 255, 255, 0.9);
@@ -280,6 +307,12 @@
                         </svg>
                         <span>Page Facebook</span>
                     </a>
+                </p>
+                <p class="text-sm text-gray-500 mt-4 text-left px-3">
+                    <svg class="inline h-4 w-4 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5l-5-5 1.41-1.41L11 15.59l7.59-7.59L20 9.41l-9 9z"/>
+                    </svg>
+                    <span>ID Utilisateur:</span> <span id="user-id-display" class="break-all text-xs">Chargement...</span>
                 </p>
             </div>
         </div>
