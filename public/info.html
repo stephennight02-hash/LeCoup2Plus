@@ -4,53 +4,271 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeCoup2Plus - Informations</title>
-    <link rel="stylesheet" href="info.css">    
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- VOTRE FOND D'ECRAN ET VOS POLICES -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poetsen+One&family=Poppins:wght@400;600;700&display=swap');
+    </style>
+    
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Configuration Tailwind et Variables de base */
+        :root {
+            --primary-blue: #5b98eb;
+            --menu-primary: #3b82f6; 
+            --user-bubble: #3b82f6; 
+            --ai-bubble-bg: #ffffff; 
+        }
+
+        /* --- VOS STYLES (GLOBAL RESETS & NAVBAR) --- */
+        
+        /* GLOBAL RESETS */
+        html { box-sizing: border-box; }
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6; /* Améliore la lisibilité */
+        }
+
+        body {
+            font-size: 21px;
+            color: #ffffff;
+            /* FOND D'ÉCRAN : Remplacé par une URL de placeholder esthétique */
+            background-image: url(img/photo-1514306191717-452ec28c7814.jpg); 
+            background-attachment: fixed; 
+            background-position: center;
+            background-size: cover;
+            min-height: 100vh;
+            padding-top: 90px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px; 
+            }
+        }
+
+        /* NAVBAR */
+        header {
+            width: 100%;
+            background-color: #030301c9;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(38, 11, 56, 0.995);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: "Dancing Script", cursive;
+        }
+
+        .links {
+            display: flex;
+            gap: 3.5rem;
+            list-style: none;
+            font-size: 1.4rem;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: #ff0000b5;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .burgermenubutton {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .burgermenubutton img {
+            display: none; /* Masqué */
+        }
+        .burgermenubutton i {
+            display: block;
+        }
+
+        .burger-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #070917;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: max-height 0.3s ease;
+        }
+
+        .burger-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .burger-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem; /* Ajusté pour le mobile */
+        }
+
+        .burger-menu .divider {
+            height: 1px;
+            background: #ffffff20;
+            margin: 1rem 0;
+        }
+
+        .buttons-burger-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .show {
+            display: block !important; 
+        }
+
+        /* RESPONSIVE NAVBAR */
+        @media (max-width: 768px) {
+            .links,
+            .buttons {
+                display: none;
+            }
+
+            .burgermenubutton {
+                display: block;
+            }
+        }
+
+
+        /* --- STYLES SPÉCIFIQUES AU CONTENU (Chat/Infos) --- */
+
+        /* Conteneur principal */
+        .content-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            padding-bottom: 4rem;
+        }
+
+        .main-content-flex {
+            display: flex;
+            flex-direction: column; 
+            gap: 2rem;
+            max-width: 900px;
+            width: 100%;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .main-content-flex {
+                flex-direction: row; 
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+
+        /* Styles de la carte Infos Pratiques (Côté Gauche) */
+        .info-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); width: 100%; max-width: 400px; text-align: center; border-top: 5px solid var(--primary-blue); transition: transform 0.3s ease;
+            color: #1a1a1a;
+        }
+        .info-box h3 { font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1.5rem; }
+        .info-box .icon { color: var(--primary-blue); font-size: 3rem; margin-bottom: 1rem; }
+        .info-box a { 
+            text-decoration: none; 
+            color: #1a1a1a; 
+            font-size: 1.1rem; 
+            font-weight: 500; 
+            padding: 0.75rem 1rem; 
+            border-radius: 0.5rem; 
+            background-color: #f3f4f6; 
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; 
+            display: flex; 
+            align-items: center; 
+            justify-content: flex-start; 
+            margin-bottom: 0.75rem; 
+        }
+        /* Correction : Ajout d'espace entre l'icône SVG et le texte dans les liens */
+        .info-box a svg { 
+            margin-right: 0.75rem; 
+            flex-shrink: 0;
+        }
+        .info-box a:hover { background-color: var(--primary-blue); color: white; box-shadow: 0 5px 15px rgba(91, 152, 235, 0.4); }
+    </style>
 </head>
+
 <body>
 
 <header>
-  <div class="navbar">
-    <div class="logo">
-      <a href="#">LeCoup2Plus</a>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">LeCoup2Plus</a>
+        </div>
+        <ul class="links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="info.html">Informations</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="reservation.html">Réservation</a></li>
+        </ul>
+        <div class="buttons">
+            <div id="user-info" style="display: none; align-items: center; gap: 10px; margin-left: 20px;">
+                <img id="user-photo" src="https://placehold.co/40x40/5b98eb/ffffff?text=U" alt="Photo de profil" style="width: 40px; height: 40px; border-radius: 50%;">
+                <span id="user-name" style="color: white; font-weight: bold;"></span>
+            </div>
+        </div>
+
+        <div class="burgermenubutton" id="menu-button" style="cursor: pointer;">
+            <i class="fas fa-bars text-white text-2xl"></i> 
+        </div>
     </div>
-    <ul class="links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="info.html">Informations</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="reservation.html">Réservation</a></li>
-    </ul>
-    <div class="buttons">
-      <div id="user-info" style="display: none; align-items: center; gap: 10px; margin-left: 20px;">
-        <img id="user-photo" src="" alt="Photo de profil" style="width: 40px; height: 40px; border-radius: 50%;">
-        <span id="user-name" style="color: white; font-weight: bold;"></span>
-      </div>
+
+    <div class="burger-menu" id="mobile-menu-content">
+        <ul class="links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="info.html">Informations</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="reservation.html">Réservation</a></li>
+            <li><a href="info_assistant.html">Chat Bot</a></li>
+            <div class="divider"></div>
+            <div class="buttons-burger-menu"></div>
+        </ul>
     </div>
-
-    <div class="burgermenubutton" style="cursor: pointer;">
-      <img src="img/menu.png" alt="Menu" style="width: 30px; height: 30px;">
-    </div>
-  </div>
-
-  <div class="burger-menu">
-    <ul class="links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="info.html">Informations</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="reservation.html">Réservation</a></li>
-      <div class="divider"></div>
-      <div class="buttons-burger-menu"></div>
-    </ul>
-  </div>
-
-  <script>
-    const burgerBtn = document.querySelector(".burgermenubutton");
-    const burgerMenu = document.querySelector(".burger-menu");
-
-    burgerBtn.addEventListener("click", () => {
-      burgerMenu.classList.toggle("show");
-    });
-  </script>
 </header>
 
 <main class="content-container">
