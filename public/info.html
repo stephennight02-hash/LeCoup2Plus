@@ -236,39 +236,47 @@
 <body>
 
 <header>
-    <div class="navbar">
-        <div class="logo">
-            <a href="#">LeCoup2Plus</a>
-        </div>
-        <ul class="links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="info.html">Informations</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="reservation.html">Réservation</a></li>
-        </ul>
-        <div class="buttons">
-            <div id="user-info" style="display: none; align-items: center; gap: 10px; margin-left: 20px;">
-                <img id="user-photo" src="https://placehold.co/40x40/5b98eb/ffffff?text=U" alt="Photo de profil" style="width: 40px; height: 40px; border-radius: 50%;">
-                <span id="user-name" style="color: white; font-weight: bold;"></span>
-            </div>
-        </div>
-
-        <div class="burgermenubutton" id="menu-button" style="cursor: pointer;">
-            <i class="fas fa-bars text-white text-2xl"></i> 
-        </div>
+  <div class="navbar">
+    <div class="logo">
+      <a href="#">LeCoup2Plus</a>
+    </div>
+    <ul class="links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="info.html">Informations</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+    </ul>
+    <div class="buttons">
+      <div id="user-info" style="display: none; align-items: center; gap: 10px; margin-left: 20px;">
+        <img id="user-photo" src="" alt="Photo de profil" style="width: 40px; height: 40px; border-radius: 50%;">
+        <span id="user-name" style="color: white; font-weight: bold;"></span>
+      </div>
     </div>
 
-    <div class="burger-menu" id="mobile-menu-content">
-        <ul class="links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="info.html">Informations</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="reservation.html">Réservation</a></li>
-            <li><a href="info_assistant.html">Chat Bot</a></li>
-            <div class="divider"></div>
-            <div class="buttons-burger-menu"></div>
-        </ul>
+    <div class="burgermenubutton" style="cursor: pointer;">
+      <img src="img/menu.png" alt="Menu" style="width: 30px; height: 30px;">
     </div>
+  </div>
+
+  <div class="burger-menu">
+    <ul class="links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="info.html">Informations</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="reservation.html">Réservation</a></li>
+      <div class="divider"></div>
+      <div class="buttons-burger-menu"></div>
+    </ul>
+  </div>
+
+  <script>
+    const burgerBtn = document.querySelector(".burgermenubutton");
+    const burgerMenu = document.querySelector(".burger-menu");
+
+    burgerBtn.addEventListener("click", () => {
+      burgerMenu.classList.toggle("show");
+    });
+  </script>
 </header>
 
 <main class="content-container">
@@ -307,12 +315,6 @@
                         </svg>
                         <span>Page Facebook</span>
                     </a>
-                </p>
-                <p class="text-sm text-gray-500 mt-4 text-left px-3">
-                    <svg class="inline h-4 w-4 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15.5l-5-5 1.41-1.41L11 15.59l7.59-7.59L20 9.41l-9 9z"/>
-                    </svg>
-                    <span>ID Utilisateur:</span> <span id="user-id-display" class="break-all text-xs">Chargement...</span>
                 </p>
             </div>
         </div>
