@@ -236,7 +236,9 @@ header {
   .card {
     width: 100%;
     max-width: 250px;
-    height: 280px;
+
+    height: auto;
+    aspect-ratio: 2/3;
   }
 }
 
