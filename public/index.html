@@ -1,136 +1,177 @@
 <!DOCTYPE html>
 <html lang="be">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeCoup2Plus</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="icon" href="img/logo123.png" sizes="96x96" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <meta property="og:type" content="website" />
-  <meta content="summary_large_image" name="twitter:card" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeCoup2Plus</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="icon" href="img/logo123.png" sizes="96x96" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+  </head>
 
-</head>
-<body>
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <a href="#">LeCoup2Plus</a>
-    </div>
-    <ul class="links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="info.html">Informations</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="reservation.html">Réservation</a></li>
-    </ul>
-    <div class="buttons">
-      <div id="user-info" style="display: none; align-items: center; gap: 10px; margin-left: 20px;">
-        <img id="user-photo" src="" alt="Photo de profil" style="width: 40px; height: 40px; border-radius: 50%;">
-        <span id="user-name" style="color: white; font-weight: bold;"></span>
+  <body>
+    <div id="particles-js"></div>
+
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <a href="#">LeCoup2Plus</a>
+        </div>
+        <ul class="links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="info.html">Informations</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="reservation.html">Réservation</a></li>
+        </ul>
+        <div class="buttons">
+          <div
+            id="user-info"
+            style="
+              display: none;
+              align-items: center;
+              gap: 10px;
+              margin-left: 20px;
+            "
+          >
+            <img
+              id="user-photo"
+              src=""
+              alt="Photo de profil"
+              style="width: 40px; height: 40px; border-radius: 50%"
+            />
+            <span id="user-name" style="color: white; font-weight: bold"></span>
+          </div>
+        </div>
+
+        <div class="burgermenubutton" style="cursor: pointer">
+          <img
+            src="img/menu.png"
+            alt="Menu"
+            style="width: 30px; height: 30px"
+          />
+        </div>
+      </div>
+
+      <div class="burger-menu">
+        <ul class="links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="info.html">Informations</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="reservation.html">Réservation</a></li>
+          <div class="divider"></div>
+          <div class="buttons-burger-menu"></div>
+        </ul>
+      </div>
+
+      <script>
+        const burgerBtn = document.querySelector(".burgermenubutton");
+        const burgerMenu = document.querySelector(".burger-menu");
+
+        burgerBtn.addEventListener("click", () => {
+          burgerMenu.classList.toggle("show");
+        });
+      </script>
+    </header>
+    <div class="flexcontact">
+      <div class="contact">
+        Contactez-nous : N° de Mauro :
+        <strong><a href="tel:+32476777961">0476777961</a></strong> <br />
+        Ou N° de Guy :
+        <strong><a href="tel:+32473657393">0473657393</a></strong> <br />
+        <br />
+        Pour voir les places disponibles <br />
+        <a href="reservation.html" class="lienici">Appuyer ici </a>
       </div>
     </div>
 
-    <div class="burgermenubutton" style="cursor: pointer;">
-      <img src="img/menu.png" alt="Menu" style="width: 30px; height: 30px;">
+    <div class="cards-container-wrapper">
+      <h2 class="section-title upcoming-plays">Prochainement à l'Affiche !</h2>
+      <div class="cards-container no-mq"></div>
+
+      <div class="card">
+        <img
+          src="img/casecomplique.png"
+          alt="Affiche de la pièce : Le Bourgeois Gentilhomme"
+        />
+        <div class="card__content"></div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <h2 class="section-title played-plays">Pièces Déjà Jouées</h2>
+      <div class="cards-container no-mq">
+        <div class="card">
+          <img
+            src="img/480422820_973107424913789_2753693632749284354_n.jpg"
+            alt="Affiche de la pièce : Le Bourgeois Gentilhomme"
+          />
+          <div class="card__content"></div>
+        </div>
+        <div class="card">
+          <img
+            src="img/2000_678f5719952c1.webp"
+            alt="Affiche de la pièce : Antigone"
+          />
+          <div class="card__content"></div>
+        </div>
+        <div class="card">
+          <img
+            src="img/481006759_975541278003737_4891812951105816998_n.jpg"
+            alt="Affiche de la pièce : L'importance d'être Constant"
+          />
+          <div class="card__content"></div>
+        </div>
+        <div class="card">
+          <img
+            src="img/686899442_964464535778078_8855760468917757877_n.jpg"
+            alt="Affiche de la pièce : J'aime Beaucoup ce que vous Faites"
+          />
+          <div class="card__content"></div>
+        </div>
+        <div class="card">
+          <img
+            src="img/92aed24e-9943-4550-a0ff-b0d0ac3d7be5.jpg"
+            alt="Affiche de la pièce à venir"
+          />
+          <div class="card__content"></div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="burger-menu">
-    <ul class="links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="info.html">Informations</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="reservation.html">Réservation</a></li>
-      <div class="divider"></div>
-      <div class="buttons-burger-menu"></div>
-    </ul>
-  </div>
-
-  <script>
-    const burgerBtn = document.querySelector(".burgermenubutton");
-    const burgerMenu = document.querySelector(".burger-menu");
-
-    burgerBtn.addEventListener("click", () => {
-      burgerMenu.classList.toggle("show");
-    });
-  </script>
-</header>
-
-
-<div class="flexcontact">
-  <div class="contact">
-    Contactez-nous :
-    N° de Mauro : <strong><a href="tel:+32476777961">0476777961</a></strong> <br>
-    Ou
-    N° de Guy : <strong><a href="tel:+32473657393">0473657393</a></strong> <br>
-    <br>
-    Pour voir les places disponibles <br>  <a href="reservation.html" class="lienici">Appuyer ici </a>
-  </div>
-
-</div>
-
-
-<div class="cards-container-wrapper">
-    <h2 class="section-title upcoming-plays">Prochainement à l'Affiche !</h2>
-    <div class="cards-container no-mq">
-
-      
+    <div class="admin-button" onclick="accessAdmin()" style="cursor: pointer">
+            <img src="img/utilisateur.png" alt="Admin" />    
     </div>
 
-    <hr class="section-divider">
+           
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+       
+    <script src="app.js"></script>
+           
+    <script>
+      function accessAdmin() {
+        const password = prompt(
+          "🔑 Entrez le mot de passe pour accéder à l'administration :"
+        );
 
-    <h2 class="section-title played-plays">Pièces Déjà Jouées</h2>
-    <div class="cards-container no-mq">
-        <div class="card">
-            <img src="img/480422820_973107424913789_2753693632749284354_n.jpg" alt="Affiche de la pièce : Le Bourgeois Gentilhomme">
-            <div class="card__content">
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/2000_678f5719952c1.webp" alt="Affiche de la pièce : Antigone">
-            <div class="card__content">
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/481006759_975541278003737_4891812951105816998_n.jpg" alt="Affiche de la pièce : L'importance d'être Constant">
-            <div class="card__content">
-            </div>
-        </div>
-        <div class="card">
-            <img src="img/686899442_964464535778078_8855760468917757877_n.jpg" alt="Affiche de la pièce : J'aime Beaucoup ce que vous Faites">
-            <div class="card__content">
-            </div>
-        </div>
-                <div class="card">
-            <img src="img/92aed24e-9943-4550-a0ff-b0d0ac3d7be5.jpg" alt="Affiche de la pièce à venir">
-            <div class="card__content">
-            </div>
-        </div>
-    </div>
-</div>
+        if (password === "lc2p123") {
+          window.location.href = "admin.html";
+        } else if (password !== null) {
+          alert("❌ Mot de passe incorrect !");
+        }
+      }
+    </script>
 
-
-
-<div class="admin-button" onclick="accessAdmin()" style="cursor: pointer;">
-  <img src="img/utilisateur.png" alt="Admin">
-</div>
-
-<script>
-  function accessAdmin() {
-  const password = prompt("🔑 Entrez le mot de passe pour accéder à l'administration :");
-
-  if (password === "lc2p123") {
-    window.location.href = "admin.html";
-  } else if (password !== null) {
-    alert("❌ Mot de passe incorrect !");
-  }
-}
-</script>
-
-
-<footer class="footer-tva">TVA : BE 0778536954</footer>
-
-
-</body>
+       
+    <footer class="footer-tva">TVA : BE 0778536954</footer>
+     
+  </body>
 </html>

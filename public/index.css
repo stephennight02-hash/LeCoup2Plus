@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poetsen+One&family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poetsen+One&family=Poppins:wght@400;600;700&display=swap");
 
 /* GLOBAL RESETS */
 html {
@@ -10,7 +10,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -25,9 +25,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-      margin-top: 50px;
-    }
+  body {
+    margin-top: 50px;
+  }
 }
 
 /* NAVBAR */
@@ -154,18 +154,17 @@ header {
   }
 }
 
-
 .flexcontact {
-    height: 10rem;
-    width: 25rem;
-    border: solid rgb(82, 15, 192) 10px;
-    position: relative;
-    display: flex;
-    justify-content: left;
-    align-items: start;
-    border-radius: 13px;
-    background-color: #030301c9;
-    font-size: 1rem;
+  height: 10rem;
+  width: 25rem;
+  border: solid rgb(82, 15, 192) 10px;
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  border-radius: 13px;
+  background-color: #030301c9;
+  font-size: 1rem;
 }
 
 .contact {
@@ -184,97 +183,96 @@ header {
 
 /* --- Section Cards : Mobile-First (par défaut) --- */
 .cards-container-wrapper {
-    margin-top: 3rem;
-    padding: 0 1rem; 
-    max-width: 1200px; 
-    margin-left: auto; 
-    margin-right: auto;
+  margin-top: 3rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    justify-items: center;
-    padding: 1rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 1rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-    width: 90vw;
-    /* MODIFIÉ: max-width légèrement réduit pour les très petits écrans */
-    max-width: 350px;
-    /* MODIFIÉ: height réduite pour les très petits écrans */
-    height: 480px; 
+  width: 90vw;
+  /* MODIFIÉ: max-width légèrement réduit pour les très petits écrans */
+  max-width: 350px;
+  /* MODIFIÉ: height réduite pour les très petits écrans */
+  height: 480px;
 
-    background-color: #f2f2f243;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    perspective: 1000px;
-    box-shadow: 0 0 0 5px #ffffff80;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    color: #eee;
+  background-color: #f2f2f243;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  color: #eee;
 }
 
 .card img {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-
 @media (max-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 2rem;
-    }
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
 
-    .card {
-        width: 100%; 
-        max-width: 250px; 
-        height: 280px;
-    }
+  .card {
+    width: 100%;
+    max-width: 250px;
+    height: 280px;
+  }
 }
 
 /* Optionnel : pour les très grands écrans (ex: desktops) */
 @media (min-width: 1024px) {
-    .cards-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-    }
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  }
 
-    .card {
-        max-width: 400px; /* Légèrement plus petites pour en mettre 3 côte à côte */
-        height: 550px; /* Hauteur ajustée pour 3 colonnes */
-    }
+  .card {
+    max-width: 400px; /* Légèrement plus petites pour en mettre 3 côte à côte */
+    height: 550px; /* Hauteur ajustée pour 3 colonnes */
+  }
 }
 
 .section-title {
-    text-align: center;
-    color: #f0f0f0;
-    font-size: 2.5rem;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-    padding: 0 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: bold;
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 2.5rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
 }
 
 /* --- Styles pour le séparateur visuel --- */
 .section-divider {
-    border: none;
-    /* MODIFIÉ: Couleur mauve pour la bordure */
-    border-top: 3px solid rgb(128, 0, 128); 
-    width: 60%;
-    max-width: 800px;
-    margin: 4rem auto;
-    box-shadow: 0 0 10px rgba(128, 0, 128, 0.8);
-    border-radius: 5px;
+  border: none;
+  /* MODIFIÉ: Couleur mauve pour la bordure */
+  border-top: 3px solid rgb(128, 0, 128);
+  width: 60%;
+  max-width: 800px;
+  margin: 4rem auto;
+  box-shadow: 0 0 10px rgba(128, 0, 128, 0.8);
+  border-radius: 5px;
 }
 
 .plan {
@@ -352,7 +350,7 @@ header {
 }
 
 .plan .features .icon {
-  background-color: #1FCAC5;
+  background-color: #1fcac5;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -392,35 +390,35 @@ header {
   text-decoration: none;
 }
 
-.plan .button:hover, .plan .button:focus {
-  background-color: #4133B7;
+.plan .button:hover,
+.plan .button:focus {
+  background-color: #4133b7;
 }
 
 .admin-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;   
-    z-index: 1000;
-    display: block;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    height: 30px;
-    width: 30px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  height: 30px;
+  width: 30px;
 }
 
 .admin-button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .admin-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
-    display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  display: block;
 }
-
 
 .footer-tva {
   width: 100%;
@@ -429,4 +427,81 @@ header {
   color: #cccccc;
   margin-top: 40px;
   padding-bottom: 20px;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.navbar .links a {
+  position: relative;
+  padding-right: 15px;
+}
+
+.navbar .links a::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+
+  background-image: url("img/hatnoel.png");
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(10deg);
+  transition: transform 0.3s ease;
+}
+
+.navbar .links a:hover::after {
+  transform: rotate(0deg) scale(1.1);
+}
+
+.links a {
+  position: relative;
+  padding-right: 15px;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  background-image: url("img/hatnoel.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(10deg);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.links a:hover::after {
+  transform: rotate(0deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  */ .burger-menu .links a {
+    display: inline-block;
+    padding-right: 0;
+    width: fit-content;
+  }
+
+  .burger-menu .links a::after {
+    top: -8px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+
+    transform: rotate(5deg);
+  }
 }

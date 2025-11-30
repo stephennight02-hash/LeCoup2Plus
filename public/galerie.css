@@ -184,16 +184,12 @@ header {
 }
 
 @media (max-width: 768px) {
-  @media (max-width: 768px) {
-    /* Média requête pour les téléphones et petits écrans */
-
-    .inner {
-      --w: 180px;
-      --h: 280px;
-      --translateZ: 280px;
-      top: 30%;
-      transform: translate(-50%, -50%) perspective(var(--perspective));
-    }
+  .inner {
+    --w: 180px;
+    --h: 280px;
+    --translateZ: 280px;
+    top: 35%;
+    transform: translate(-50%, -50%) perspective(var(--perspective));
   }
 }
 
@@ -234,4 +230,81 @@ header {
 
 .card:hover .img {
   opacity: 1;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.navbar .links a {
+  position: relative;
+  padding-right: 15px;
+}
+
+.navbar .links a::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+
+  background-image: url("img/hatnoel.png");
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(10deg);
+  transition: transform 0.3s ease;
+}
+
+.navbar .links a:hover::after {
+  transform: rotate(0deg) scale(1.1);
+}
+
+.links a {
+  position: relative;
+  padding-right: 15px;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  background-image: url("img/hatnoel.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(10deg);
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.links a:hover::after {
+  transform: rotate(0deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  */ .burger-menu .links a {
+    display: inline-block;
+    padding-right: 0;
+    width: fit-content;
+  }
+
+  .burger-menu .links a::after {
+    top: -8px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+
+    transform: rotate(5deg);
+  }
 }

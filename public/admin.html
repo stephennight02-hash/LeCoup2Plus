@@ -1,111 +1,168 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administration des Places</title>
-    <link rel="stylesheet" href="admin.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
+      .admin-main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .admin-controls {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #34495e;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        text-align: center;
+      }
+      .admin-seats-container {
+        max-width: 600px;
+        margin-top: 20px;
+      }
 
-        .admin-main { flex-direction: column; align-items: center; }
-        .admin-controls { margin-bottom: 25px; padding: 20px; background: #34495e; border-radius: 10px; width: 100%; max-width: 600px; text-align: center; }
-        .admin-seats-container { max-width: 600px; margin-top: 20px; }
-
-        .seat { cursor: pointer; } 
-        .seat:hover { opacity: 0.8; transform: scale(1.05); }
+      .seat {
+        cursor: pointer;
+      }
+      .seat:hover {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
     </style>
-</head>
+  </head>
+  <div id="particles-js"></div>
 
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <a href="#">LeCoup2Plus</a>
-    </div>
-    <ul class="links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="info.html">Informations</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="reservation.html">Réservation</a></li>
-    </ul>
-    <div class="buttons">
-      <div id="user-info" style="display: none; align-items: center; gap: 10px; margin-left: 20px;">
-        <img id="user-photo" src="" alt="Photo de profil" style="width: 40px; height: 40px; border-radius: 50%;">
-        <span id="user-name" style="color: white; font-weight: bold;"></span>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">LeCoup2Plus</a>
+      </div>
+      <ul class="links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="info.html">Informations</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="reservation.html">Réservation</a></li>
+      </ul>
+      <div class="buttons">
+        <div
+          id="user-info"
+          style="
+            display: none;
+            align-items: center;
+            gap: 10px;
+            margin-left: 20px;
+          "
+        >
+          <img
+            id="user-photo"
+            src=""
+            alt="Photo de profil"
+            style="width: 40px; height: 40px; border-radius: 50%"
+          />
+          <span id="user-name" style="color: white; font-weight: bold"></span>
+        </div>
+      </div>
+
+      <div class="burgermenubutton" style="cursor: pointer">
+        <img src="img/menu.png" alt="Menu" style="width: 30px; height: 30px" />
       </div>
     </div>
 
-    <div class="burgermenubutton" style="cursor: pointer;">
-      <img src="img/menu.png" alt="Menu" style="width: 30px; height: 30px;">
+    <div class="burger-menu">
+      <ul class="links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="info.html">Informations</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="reservation.html">Réservation</a></li>
+        <div class="divider"></div>
+        <div class="buttons-burger-menu"></div>
+      </ul>
     </div>
-  </div>
 
-  <div class="burger-menu">
-    <ul class="links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="info.html">Informations</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="reservation.html">Réservation</a></li>
-      <div class="divider"></div>
-      <div class="buttons-burger-menu"></div>
-    </ul>
-  </div>
+    <script>
+      const burgerBtn = document.querySelector(".burgermenubutton");
+      const burgerMenu = document.querySelector(".burger-menu");
 
-  <script>
-    const burgerBtn = document.querySelector(".burgermenubutton");
-    const burgerMenu = document.querySelector(".burger-menu");
+      burgerBtn.addEventListener("click", () => {
+        burgerMenu.classList.toggle("show");
+      });
+    </script>
+  </header>
 
-    burgerBtn.addEventListener("click", () => {
-      burgerMenu.classList.toggle("show");
-    });
-  </script>
-</header>
+  <body>
+    <main class="content admin-main">
+      <h1>Administration des Réservations</h1>
 
-
-<body>
-
-<main class="content admin-main">
-    <h1>Administration des Réservations</h1>
-    
-    <section class="admin-controls">
+      <section class="admin-controls">
         <h2>Sélection du Jour</h2>
-        <div class="choix-jour jours-container" id="admin-day-selector" style="flex-direction: row; gap: 15px; justify-content: center; margin-top: 15px;">
-            <button class="jour-btn" data-day="ven">Vendredi</button>
-            <button class="jour-btn" data-day="sam">Samedi</button>
-            <button class="jour-btn" data-day="dim">Dimanche</button>
+        <div
+          class="choix-jour jours-container"
+          id="admin-day-selector"
+          style="
+            flex-direction: row;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 15px;
+          "
+        >
+          <button class="jour-btn" data-day="ven">Vendredi</button>
+          <button class="jour-btn" data-day="sam">Samedi</button>
+          <button class="jour-btn" data-day="dim">Dimanche</button>
         </div>
 
-        <h3 id="current-admin-day" style="margin-top: 20px; color: #ff4500;">Jour sélectionné: Vendredi</h3>
-    </section>
+        <h3 id="current-admin-day" style="margin-top: 20px; color: #ff4500">
+          Jour sélectionné: Vendredi
+        </h3>
+      </section>
 
-
-<section class="admin-controls">
+      <section class="admin-controls">
         <h2>Actions</h2>
-        <button id="save-btn" class="jour-btn" style="background: #e67e22; margin-top: 10px; width: 200px;">
-            <i class="fas fa-save"></i> Sauvegarder l'État
+        <button
+          id="save-btn"
+          class="jour-btn"
+          style="background: #e67e22; margin-top: 10px; width: 200px"
+        >
+          <i class="fas fa-save"></i> Sauvegarder l'État
         </button>
-        
-        <p id="message-area" style="margin-top: 15px; font-weight: bold; min-height: 20px;">
 
-        </p>
-    </section>
+        <p
+          id="message-area"
+          style="margin-top: 15px; font-weight: bold; min-height: 20px"
+        ></p>
+      </section>
 
+      <section class="reservation admin-seats-container">
+        <div class="scene">Cliquez sur une place pour changer son état</div>
 
-    <section class="reservation admin-seats-container">
-        <div class="scene">Cliquez sur une place pour changer son état</div> 
-        
         <div class="seats" id="seats-container">
-            <div style="color:white;">Chargement de l'interface Admin...</div>
+          <div style="color: white">Chargement de l'interface Admin...</div>
         </div>
-        
-        <div class="legend" style="margin-top: 30px;">
-            <p><span><span class="circle" style="background:#30af34;"></span> Libre</span>
-               <span><span class="circle" style="background:#575757;"></span> Réservée</span></p>
+
+        <div class="legend" style="margin-top: 30px">
+          <p>
+            <span
+              ><span class="circle" style="background: #30af34"></span>
+              Libre</span
+            >
+            <span
+              ><span class="circle" style="background: #575757"></span>
+              Réservée</span
+            >
+          </p>
         </div>
-    </section>
-</main>
-
-<script src="admin.js"></script>
-
-</body>
+      </section>
+    </main>
+           
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+       
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
+  </body>
 </html>
